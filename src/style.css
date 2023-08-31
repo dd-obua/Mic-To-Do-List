@@ -1,17 +1,1 @@
-* {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
 
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
-}
-
-body {
-  background-color: bisque;
-  font-family: 'Roboto', sans-serif;
-  color: red;
-  font-size: 1.6rem;
-}
