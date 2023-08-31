@@ -16,6 +16,7 @@ body {
   font-size: 1.6rem;
   color: #696969;
   background: #f6f6f6;
+  letter-spacing: -0.05rem;
 }
 
 .container {
@@ -63,6 +64,7 @@ form {
   color: #696969;
   font-family: 'Inter', sans-serif;
   font-size: 1.6rem;
+  letter-spacing: -0.05rem;
   font-style: italic;
   padding: 1.8rem 0;
   margin-left: 0;
