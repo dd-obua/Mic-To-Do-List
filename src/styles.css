@@ -14,4 +14,104 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   font-size: 1.6rem;
+  color: #696969;
+  background: #f6f6f6;
+}
+
+.container {
+  background: #fff;
+  width: 50%;
+  margin: 4.8rem auto 0;
+  padding: 2.4rem 0;
+  border-radius: 2px;
+}
+
+.heading,
+.entry,
+li {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #999;
+}
+
+.heading,
+li {
+  padding: 1.8rem 2.4rem;
+}
+
+.heading {
+  padding-top: 0;
+}
+
+.heading,
+.entry {
+  justify-content: space-between;
+}
+
+.entry {
+  padding: 0 2.4rem;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.entry input {
+  width: 90%;
+  color: #696969;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  padding: 1.8rem 0;
+  margin-left: 0;
+  border: none;
+  outline: none;
+}
+
+.entry input:active {
+  border: none;
+  outline: none;
+}
+
+.task {
+  margin-left: 2.4rem;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: #fff;
+}
+
+button i {
+  transform: rotate(90deg);
+}
+
+li input {
+  padding: 1rem;
+}
+
+.manipulate {
+  margin-left: auto;
+}
+
+.clear {
+  text-align: center;
+  padding-top: 2.4rem;
+}
+
+.clear:hover {
+  text-decoration: underline;
+  color: #333;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
