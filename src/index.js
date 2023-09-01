@@ -28,11 +28,12 @@ const showTaskList = list => {
 showTaskList(storedTaskList);
 
 const populateStorage = () => {
-  addTask({
-    description: taskInputField.value,
-    completed: false,
-    index: storedTaskList.length + 1,
-  });
+  if (taskInputField.value.length > 0)
+    addTask({
+      description: taskInputField.value,
+      completed: false,
+      index: storedTaskList.length + 1,
+    });
 };
 
 form.addEventListener('submit', populateStorage);
