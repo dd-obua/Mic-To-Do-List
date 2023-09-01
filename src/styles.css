@@ -83,7 +83,7 @@ form {
   margin-left: 2.4rem;
 }
 
-i:hover {
+.icon:hover {
   cursor: pointer;
 }
 
