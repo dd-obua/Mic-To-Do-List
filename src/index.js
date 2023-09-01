@@ -8,10 +8,10 @@ const list = [
   { description: 'Treck', completed: false, index: 4 },
 ];
 
-const showTaskList = list => {
+const showTaskList = (list) => {
   const listContainer = document.querySelector('ul');
 
-  list.forEach(item => {
+  list.map((item) => {
     const listItem = document.createElement('li');
     listItem.innerHTML = `
       <input type="checkbox">
@@ -21,7 +21,7 @@ const showTaskList = list => {
         <span class="delete hidden"><i class="fa fa-trash icon" aria-hidden="true"></i></span>
       </p>
     `;
-    listContainer.appendChild(listItem);
+    return listContainer.appendChild(listItem);
   });
 };
 
