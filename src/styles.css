@@ -1,0 +1,139 @@
+*,
+*::before,
+*::after,
+input {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.6rem;
+  color: #444;
+  background: #f6f6f6;
+  letter-spacing: -0.05rem;
+}
+
+.container {
+  background: #fff;
+  width: 50%;
+  margin: 4.8rem auto;
+  padding: 2.4rem 0;
+  border-radius: 2px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.heading,
+.entry,
+li {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #999;
+}
+
+.heading,
+li {
+  padding: 1.8rem 2.4rem;
+}
+
+.heading {
+  padding-top: 0;
+}
+
+.heading,
+.entry {
+  justify-content: space-between;
+}
+
+.entry {
+  padding: 0 2.4rem;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+li input {
+  padding: 1rem;
+}
+
+.entry input {
+  width: 90%;
+  color: #444;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: -0.05rem;
+  font-style: italic;
+  padding: 1.8rem 0;
+  margin-left: 0;
+  border: none;
+  outline: none;
+}
+
+.entry input::placeholder {
+  color: #999;
+}
+
+.entry input:active {
+  border: none;
+  outline: none;
+}
+
+.task {
+  margin-left: 2.4rem;
+}
+
+.icon {
+  color: #999;
+}
+
+.icon:hover {
+  cursor: pointer;
+  color: #444;
+}
+
+ul .icon:hover {
+  cursor: move;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: #fff;
+}
+
+button i {
+  transform: rotate(90deg);
+}
+
+.manipulate {
+  margin-left: auto;
+}
+
+.clear {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.6rem;
+  color: #999;
+  letter-spacing: -0.05rem;
+  padding-top: 2.4rem;
+  display: inline-block;
+}
+
+.clear:hover {
+  text-decoration: underline;
+  color: #333;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
