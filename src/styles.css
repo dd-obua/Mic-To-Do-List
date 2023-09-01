@@ -27,6 +27,7 @@ body {
   padding: 2.4rem 0;
   border-radius: 2px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .heading,
@@ -119,8 +120,12 @@ li input {
 }
 
 .clear {
-  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.6rem;
+  color: #999;
+  letter-spacing: -0.05rem;
   padding-top: 2.4rem;
+  display: inline-block;
 }
 
 .clear:hover {
