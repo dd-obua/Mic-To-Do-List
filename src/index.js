@@ -9,18 +9,41 @@ import {
 let storedTaskList = JSON.parse(localStorage.getItem('taskList')) || [];
 
 const showTaskList = taskList => {
+  // Create HTML elements
   const listContainer = document.querySelector('ul');
 
   taskList.forEach(item => {
     const listItem = document.createElement('li');
-    listItem.innerHTML = `
-      <input type="checkbox">
-      <p class="task">${item.description}</p>
-      <p class="manipulate">
-        <span class="options"><i class="fa fa-ellipsis-v icon" aria-hidden="true"></i></span>
-        <span class="delete hidden"><i class="fa fa-trash icon" aria-hidden="true"></i></span>
-      </p>
-    `;
+
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.id = 'checkbox';
+
+    const taskParagraph = document.createElement('p');
+    taskParagraph.id = 'task-paragraph';
+    taskParagraph.class = 'task';
+
+    taskParagraph.textContent = item.description;
+    const modificationParagraph = document.createElement('p');
+    modificationParagraph.class = 'manipulate';
+
+    const optionsSpan = document.createElement('span');
+    optionsSpan.id = 'options';
+    optionsSpan.class = 'options';
+    optionsSpan.innerHTML = `<i class="fa fa-ellipsis-v icon" aria-hidden="true"></i>`;
+
+    const deleteSpan = document.createElement('span');
+    deleteSpan.id = 'delete';
+    deleteSpan.class = 'delete';
+    deleteSpan.innerHTML = `<i class="fa fa-trash icon" aria-hidden="true"></i>`;
+
+    modificationParagraph.appendChild(optionsSpan);
+    modificationParagraph.appendChild(deleteSpan);
+
+    // Place child elements inside parent ones
+    listItem.appendChild(checkbox);
+    listItem.appendChild(taskParagraph);
+    listItem.appendChild(modificationParagraph);
     listContainer.appendChild(listItem);
   });
 };
