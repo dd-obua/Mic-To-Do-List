@@ -15,7 +15,7 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   font-size: 1.6rem;
-  color: #696969;
+  color: #444;
   background: #f6f6f6;
   letter-spacing: -0.05rem;
 }
@@ -63,7 +63,7 @@ form {
 
 .entry input {
   width: 90%;
-  color: #696969;
+  color: #444;
   font-family: 'Inter', sans-serif;
   font-size: 1.6rem;
   letter-spacing: -0.05rem;
@@ -72,6 +72,10 @@ form {
   margin-left: 0;
   border: none;
   outline: none;
+}
+
+.entry input::placeholder {
+  color: #999;
 }
 
 .entry input:active {
@@ -83,8 +87,17 @@ form {
   margin-left: 2.4rem;
 }
 
+.icon {
+  color: #999;
+}
+
 .icon:hover {
   cursor: pointer;
+  color: #444;
+}
+
+ul .icon:hover {
+  cursor: move;
 }
 
 button {
