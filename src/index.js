@@ -1,11 +1,17 @@
 import './styles.css';
 
-const list = [];
+const list = [
+  { description: 'Pray', completed: true, index: 0 },
+  { description: 'Brush', completed: true, index: 1 },
+  { description: 'Walk', completed: false, index: 2 },
+  { description: 'Sing', completed: false, index: 3 },
+  { description: 'Treck', completed: false, index: 4 },
+];
 
-const showTaskList = list => {
+const showTaskList = (list) => {
   const listContainer = document.querySelector('ul');
 
-  list.map(item => {
+  list.map((item) => {
     const listItem = document.createElement('li');
     listItem.innerHTML = `
       <input type="checkbox">
