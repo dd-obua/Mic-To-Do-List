@@ -11,7 +11,7 @@ const list = [
 const showTaskList = list => {
   const listContainer = document.querySelector('ul');
 
-  list.map(item => {
+  list.forEach(item => {
     const listItem = document.createElement('li');
     listItem.innerHTML = `
       <input type="checkbox">
