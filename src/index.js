@@ -11,7 +11,7 @@ let storedTaskList = JSON.parse(localStorage.getItem('taskList')) || [];
 const showTaskList = list => {
   const listContainer = document.querySelector('ul');
 
-  list.map(item => {
+  list.forEach(item => {
     const listItem = document.createElement('li');
     listItem.innerHTML = `
       <input type="checkbox">
@@ -21,7 +21,7 @@ const showTaskList = list => {
         <span class="delete hidden"><i class="fa fa-trash icon" aria-hidden="true"></i></span>
       </p>
     `;
-    return listContainer.appendChild(listItem);
+    listContainer.appendChild(listItem);
   });
 };
 
