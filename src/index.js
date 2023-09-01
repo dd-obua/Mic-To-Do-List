@@ -34,3 +34,12 @@ const populateStorage = () => {
     index: storedTaskList.length + 1,
   });
 };
+
+form.addEventListener('submit', populateStorage);
+
+taskAddBtn.addEventListener('click', e => {
+  e.preventDefault();
+  populateStorage();
+  taskInputField.value = '';
+  location.reload();
+});
