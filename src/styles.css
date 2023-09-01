@@ -35,7 +35,7 @@ body {
 li {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid #ebebeb;
 }
 
 .heading,
