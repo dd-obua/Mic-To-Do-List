@@ -8,22 +8,21 @@ const list = [
   { description: 'Treck', completed: false, index: 4 },
 ];
 
-const listContainer = document.querySelector('ul');
+const showTaskList = list => {
+  const listContainer = document.querySelector('ul');
 
-const showTaskList = () => {
-  list.forEach(item => {
-    const listItemHTML = `
-      <li>
-        <input type="checkbox">
-        <p class="task">${item.description}</p>
-        <p class="manipulate">
-          <span><i class="fa fa-ellipsis-v icon" aria-hidden="true"></i></span>
-          <span class="delete hidden"><i class="fa fa-trash icon" aria-hidden="true"></i></span>
-        </p>
-      </li>
+  list.map(item => {
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `
+      <input type="checkbox">
+      <p class="task">${item.description}</p>
+      <p class="manipulate">
+        <span class="options"><i class="fa fa-ellipsis-v icon" aria-hidden="true"></i></span>
+        <span class="delete hidden"><i class="fa fa-trash icon" aria-hidden="true"></i></span>
+      </p>
     `;
-    listContainer.insertAdjacentHTML('beforeend', listItemHTML);
+    listContainer.appendChild(listItem);
   });
 };
 
-window.addEventListener('load', showTaskList);
+showTaskList(list);
