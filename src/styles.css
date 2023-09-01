@@ -62,6 +62,10 @@ form {
   justify-content: space-between;
 }
 
+li input {
+  padding: 1rem;
+}
+
 .entry input {
   width: 90%;
   color: #444;
@@ -109,10 +113,6 @@ button {
 
 button i {
   transform: rotate(90deg);
-}
-
-li input {
-  padding: 1rem;
 }
 
 .manipulate {
