@@ -1,6 +1,6 @@
 import './styles.css';
 
-const list = [];
+const taskList = [];
 
 const showTaskList = list => {
   const listContainer = document.querySelector('ul');
@@ -19,4 +19,4 @@ const showTaskList = list => {
   });
 };
 
-showTaskList(list);
+showTaskList(taskList);
