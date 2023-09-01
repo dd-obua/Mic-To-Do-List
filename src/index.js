@@ -8,10 +8,10 @@ import {
 
 let storedTaskList = JSON.parse(localStorage.getItem('taskList')) || [];
 
-const showTaskList = list => {
+const showTaskList = taskList => {
   const listContainer = document.querySelector('ul');
 
-  list.forEach(item => {
+  taskList.forEach(item => {
     const listItem = document.createElement('li');
     listItem.innerHTML = `
       <input type="checkbox">
