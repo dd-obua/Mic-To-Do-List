@@ -9,3 +9,5 @@ const list = [
   { description: 'Treck', completed: false, index: 5 },
   { description: 'Work', completed: false, index: 6 },
 ];
+
+const listContainer = document.querySelector('ul');
