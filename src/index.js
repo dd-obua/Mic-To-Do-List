@@ -27,3 +27,5 @@ const showTaskList = () => {
     listContainer.insertAdjacentHTML('beforeend', listItemHTML);
   });
 };
+
+window.addEventListener('load', showTaskList);
