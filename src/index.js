@@ -11,3 +11,19 @@ const list = [
 ];
 
 const listContainer = document.querySelector('ul');
+
+const showTaskList = () => {
+  list.forEach(item => {
+    const listItemHTML = `
+      <li>
+        <input type="checkbox">
+        <p class="task">${item.description}</p>
+        <p class="manipulate">
+          <span><i class="fa fa-ellipsis-v" aria-hidden="true"></i></span>
+          <span class="delete hidden"><i class="fa fa-trash" aria-hidden="true"></i></span>
+        </p>
+      </li>
+    `;
+    listContainer.insertAdjacentHTML('beforeend', listItemHTML);
+  });
+};
