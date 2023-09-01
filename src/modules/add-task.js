@@ -12,3 +12,8 @@ const addTask = task => {
   localStorage.setItem('taskList', JSON.stringify(storedTaskList));
 };
 
+const taskInputField = document.getElementById('add-task-field');
+const taskAddBtn = document.getElementById('add-task-btn');
+const form = document.getElementById('form');
+
+export { addTask, taskInputField, form, taskAddBtn };

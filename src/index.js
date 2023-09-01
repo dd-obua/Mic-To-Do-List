@@ -1,4 +1,10 @@
 import './styles.css';
+import {
+  addTask,
+  taskInputField,
+  form,
+  taskAddBtn,
+} from './modules/add-task.js';
 
 let storedTaskList = JSON.parse(localStorage.getItem('taskList')) || [];
 
