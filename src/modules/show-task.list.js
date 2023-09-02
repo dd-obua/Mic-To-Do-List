@@ -1,5 +1,11 @@
 let selectedItem = null;
 
+const createElements = (tag, classes) => {
+  const element = document.createElement(tag);
+  element.classList.add(...classes);
+  return element;
+};
+
 export const showTaskList = taskList => {
   const listContainer = document.querySelector('ul');
 
