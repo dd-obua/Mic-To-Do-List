@@ -97,5 +97,18 @@ export const showTaskList = taskList => {
     listItem.appendChild(taskParagraph);
     listItem.appendChild(taskInput);
     listItem.appendChild(modificationParagraph);
+
+    // Toggle between view and edit modes when the list item is clicked
+    listItem.addEventListener('click', () => {
+      const isEditing = taskInput.style.display === 'block';
+
+      if (!isEditing) {
+        taskParagraph.style.display = 'none';
+        taskInput.style.display = 'block';
+        taskInput.focus();
+        optionsIcon.style.display = 'none';
+        deleteIcon.style.display = 'block';
+      }
+    });
   });
 };
