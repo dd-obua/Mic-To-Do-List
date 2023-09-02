@@ -10,10 +10,15 @@ export const showTaskList = taskList => {
     const taskParagraph = document.createElement('p');
     taskParagraph.textContent = item.description;
     const modificationParagraph = document.createElement('p');
+    const optionsIcon = document.createElement('i');
+    optionsIcon.classList.add('fa', 'fa-ellipsis-v', 'icon');
     const optionsSpan = document.createElement('span');
-    optionsSpan.innerHTML = `<i class="fa fa-ellipsis-v icon" aria-hidden="true"></i>`;
+    const deleteIcon = document.createElement('i');
+    deleteIcon.classList.add('fa', 'fa-trash', 'icon');
+    optionsSpan.appendChild(optionsIcon);
     const deleteSpan = document.createElement('span');
-    deleteSpan.innerHTML = `<i class="fa fa-trash icon" aria-hidden="true"></i>`;
+    deleteSpan.appendChild(deleteIcon);
+
     modificationParagraph.appendChild(optionsSpan);
     modificationParagraph.appendChild(deleteSpan);
 
