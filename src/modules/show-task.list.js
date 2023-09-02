@@ -70,6 +70,11 @@ export const showTaskList = taskList => {
       // Delete selected task
       const updatedTaskList = taskList.filter(task => task.index !== taskId);
 
+      // Re-index items to ensure consecutive indexes
+      updatedTaskList.forEach((task, i) => {
+        task.index = i + 1;
+      });
+
       // Update local storage
       localStorage.setItem('taskList', JSON.stringify(updatedTaskList));
 
