@@ -1,3 +1,5 @@
+let selectedItem = null;
+
 export const showTaskList = taskList => {
   const listContainer = document.querySelector('ul');
 
@@ -13,10 +15,12 @@ export const showTaskList = taskList => {
     const optionsIcon = document.createElement('i');
     optionsIcon.classList.add('fa', 'fa-ellipsis-v', 'icon');
     const optionsSpan = document.createElement('span');
+    optionsSpan.classList.add('options-span');
     const deleteIcon = document.createElement('i');
     deleteIcon.classList.add('fa', 'fa-trash', 'icon');
     optionsSpan.appendChild(optionsIcon);
     const deleteSpan = document.createElement('span');
+    deleteSpan.classList.add('delete-span');
     deleteSpan.appendChild(deleteIcon);
 
     modificationParagraph.appendChild(optionsSpan);
@@ -32,10 +36,5 @@ export const showTaskList = taskList => {
     listItem.classList.add('list-display');
     modificationParagraph.classList.add('manipulate');
     deleteSpan.classList.add('hidden');
-
-    listItem.addEventListener('click', () => {
-      optionsSpan.classList.add('hidden');
-      deleteSpan.classList.remove('hidden');
-    });
   });
 };
