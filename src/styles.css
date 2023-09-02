@@ -60,6 +60,10 @@ li {
   gap: 2.4rem;
 }
 
+.list-display:hover {
+  cursor: move;
+}
+
 form {
   width: 100%;
   display: flex;
@@ -106,7 +110,7 @@ li input {
 }
 
 ul .icon:hover {
-  cursor: move;
+  cursor: pointer;
 }
 
 button {
