@@ -1,58 +1,7 @@
+import { createElement, createListItem } from './create-elements.js';
+import { updateTaskListAndDisplay } from './update-task-list.js';
+
 let selectedItem = null;
-
-// Create HTML element
-const createElement = (tag, classes) => {
-  const element = document.createElement(tag);
-  element.classList.add(...classes);
-  return element;
-};
-
-// Create list item
-const createListItem = item => {
-  const listItem = createElement('li', ['list-display']);
-
-  const checkbox = createElement('input', []);
-  checkbox.type = 'checkbox';
-
-  const taskParagraph = createElement('p', []);
-  taskParagraph.textContent = item.description;
-
-  const modificationParagraph = createElement('p', ['manipulate']);
-
-  const optionsSpan = createElement('span', ['options-span']);
-  const optionsIcon = createElement('i', ['fa', 'fa-ellipsis-v', 'icon']);
-
-  const deleteSpan = createElement('span', ['delete-span', 'hidden']);
-  const deleteIcon = createElement('i', ['fa', 'fa-trash', 'icon']);
-
-  optionsSpan.appendChild(optionsIcon);
-  deleteSpan.appendChild(deleteIcon);
-
-  modificationParagraph.appendChild(optionsSpan);
-  modificationParagraph.appendChild(deleteSpan);
-
-  listItem.appendChild(checkbox);
-  listItem.appendChild(taskParagraph);
-  listItem.appendChild(modificationParagraph);
-
-  return listItem;
-};
-
-// Update local storage and display
-const updateTaskListAndDisplay = (taskList, listItem, listContainer) => {
-  const taskIdToDelete = listItem.index;
-  const updatedTaskList = taskList.filter(
-    task => task.index !== taskIdToDelete
-  );
-
-  updatedTaskList.forEach((task, i) => {
-    task.index = i + 1;
-  });
-
-  localStorage.setItem('taskList', JSON.stringify(updatedTaskList));
-  listContainer.removeChild(listItem);
-  selectedItem = null;
-};
 
 export const showTaskList = taskList => {
   const listContainer = document.querySelector('ul');
