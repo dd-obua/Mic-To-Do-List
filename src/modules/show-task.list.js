@@ -36,5 +36,30 @@ export const showTaskList = taskList => {
     listItem.classList.add('list-display');
     modificationParagraph.classList.add('manipulate');
     deleteSpan.classList.add('hidden');
+
+    // Manipulate tasks
+    listItem.addEventListener('click', () => {
+      // Check if another item was selected and toggle its visibility
+      if (selectedItem) {
+        const optionsSpan = selectedItem.querySelector('.options-span');
+        const deleteSpan = selectedItem.querySelector('.delete-span');
+        if (optionsSpan && deleteSpan) {
+          optionsSpan.classList.remove('hidden');
+          deleteSpan.classList.add('hidden');
+        }
+      }
+
+      // Remove options span and display delete span if a list item is clicked
+      const optionsSpan = listItem.querySelector('.options-span');
+      const deleteSpan = listItem.querySelector('.delete-span');
+
+      if (optionsSpan && deleteSpan) {
+        optionsSpan.classList.add('hidden');
+        deleteSpan.classList.remove('hidden');
+      }
+
+      // Update currently selected item
+      selectedItem = listItem;
+    });
   });
 };
