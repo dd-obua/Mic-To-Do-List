@@ -61,5 +61,23 @@ export const showTaskList = taskList => {
       // Update currently selected item
       selectedItem = listItem;
     });
+
+    // Remove item from local storage
+    deleteSpan.addEventListener('click', () => {
+      // Create an id from the task index
+      const taskId = item.index;
+
+      // Delete selected task
+      const updatedTaskList = taskList.filter(task => task.index !== taskId);
+
+      // Update local storage
+      localStorage.setItem('taskList', JSON.stringify(updatedTaskList));
+
+      // Remove the list item from display
+      listContainer.removeChild(listItem);
+
+      // Remove deleted item from display
+      selectedItem = null;
+    });
   });
 };
