@@ -14,29 +14,15 @@ const showTaskList = taskList => {
 
   taskList.forEach(item => {
     const listItem = document.createElement('li');
-
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
-    checkbox.id = 'checkbox';
-
     const taskParagraph = document.createElement('p');
-    taskParagraph.id = 'task-paragraph';
-    taskParagraph.class = 'task';
-
     taskParagraph.textContent = item.description;
     const modificationParagraph = document.createElement('p');
-    modificationParagraph.class = 'manipulate';
-
     const optionsSpan = document.createElement('span');
-    optionsSpan.id = 'options';
-    optionsSpan.class = 'options';
     optionsSpan.innerHTML = `<i class="fa fa-ellipsis-v icon" aria-hidden="true"></i>`;
-
     const deleteSpan = document.createElement('span');
-    deleteSpan.id = 'delete';
-    deleteSpan.class = 'delete';
     deleteSpan.innerHTML = `<i class="fa fa-trash icon" aria-hidden="true"></i>`;
-
     modificationParagraph.appendChild(optionsSpan);
     modificationParagraph.appendChild(deleteSpan);
 
@@ -45,6 +31,11 @@ const showTaskList = taskList => {
     listItem.appendChild(taskParagraph);
     listItem.appendChild(modificationParagraph);
     listContainer.appendChild(listItem);
+
+    // Style list components
+    deleteSpan.classList.add('hidden');
+    modificationParagraph.classList.add('manipulate');
+    listItem.classList.add('list-display');
   });
 };
 
