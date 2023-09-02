@@ -10,6 +10,7 @@ export const showTaskList = taskList => {
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     const taskParagraph = document.createElement('p');
+    taskParagraph.classList.add('taskParagraph');
     taskParagraph.textContent = item.description;
     const modificationParagraph = document.createElement('p');
     const optionsIcon = document.createElement('i');
@@ -22,14 +23,9 @@ export const showTaskList = taskList => {
     const deleteSpan = document.createElement('span');
     deleteSpan.classList.add('delete-span');
     deleteSpan.appendChild(deleteIcon);
-    const editIcon = document.createElement('i');
-    editIcon.classList.add('fa', 'fa-pencil-square-o');
-    const editSpan = document.createElement('span');
-    editSpan.appendChild(editIcon);
 
     modificationParagraph.appendChild(optionsSpan);
     modificationParagraph.appendChild(deleteSpan);
-    modificationParagraph.appendChild(editSpan);
 
     // Place child elements inside parent ones
     listItem.appendChild(checkbox);
@@ -41,7 +37,6 @@ export const showTaskList = taskList => {
     listItem.classList.add('list-display');
     modificationParagraph.classList.add('manipulate');
     deleteSpan.classList.add('hidden');
-    editSpan.classList.add('hidden');
 
     // Manipulate tasks
     listItem.addEventListener('click', () => {
@@ -90,5 +85,17 @@ export const showTaskList = taskList => {
       // Remove deleted item from display
       selectedItem = null;
     });
+
+    // Editing task description
+    const taskInput = document.createElement('input');
+    taskInput.type = 'text';
+    taskInput.value = item.description;
+    taskInput.classList.add('task-input');
+    taskInput.style.display = 'none';
+
+    listItem.appendChild(checkbox);
+    listItem.appendChild(taskParagraph);
+    listItem.appendChild(taskInput);
+    listItem.appendChild(modificationParagraph);
   });
 };
