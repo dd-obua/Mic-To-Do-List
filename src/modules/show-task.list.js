@@ -27,5 +27,10 @@ export const showTaskList = taskList => {
     listItem.classList.add('list-display');
     modificationParagraph.classList.add('manipulate');
     deleteSpan.classList.add('hidden');
+
+    listItem.addEventListener('click', () => {
+      optionsSpan.classList.add('hidden');
+      deleteSpan.classList.remove('hidden');
+    });
   });
 };
