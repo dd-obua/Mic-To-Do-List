@@ -22,9 +22,14 @@ export const showTaskList = taskList => {
     const deleteSpan = document.createElement('span');
     deleteSpan.classList.add('delete-span');
     deleteSpan.appendChild(deleteIcon);
+    const editIcon = document.createElement('i');
+    editIcon.classList.add('fa', 'fa-pencil-square-o');
+    const editSpan = document.createElement('span');
+    editSpan.appendChild(editIcon);
 
     modificationParagraph.appendChild(optionsSpan);
     modificationParagraph.appendChild(deleteSpan);
+    modificationParagraph.appendChild(editSpan);
 
     // Place child elements inside parent ones
     listItem.appendChild(checkbox);
@@ -36,6 +41,7 @@ export const showTaskList = taskList => {
     listItem.classList.add('list-display');
     modificationParagraph.classList.add('manipulate');
     deleteSpan.classList.add('hidden');
+    editSpan.classList.add('hidden');
 
     // Manipulate tasks
     listItem.addEventListener('click', () => {
