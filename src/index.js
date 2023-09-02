@@ -36,6 +36,7 @@ const showTaskList = taskList => {
     // Style list components
     listItem.classList.add('list-display');
     modificationParagraph.classList.add('manipulate');
+    deleteSpan.classList.add('hidden');
   });
 };
 
