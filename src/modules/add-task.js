@@ -1,4 +1,4 @@
-const addTask = task => {
+const addTask = (task) => {
   // Check if data already exists in local storage
   let storedTaskList = JSON.parse(localStorage.getItem('taskList')) || [];
 
@@ -16,4 +16,6 @@ const taskInputField = document.getElementById('add-task-field');
 const taskAddBtn = document.getElementById('add-task-btn');
 const form = document.getElementById('form');
 
-export { addTask, taskInputField, form, taskAddBtn };
+export {
+  addTask, taskInputField, form, taskAddBtn,
+};

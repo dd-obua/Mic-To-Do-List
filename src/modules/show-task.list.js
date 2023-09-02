@@ -1,9 +1,9 @@
 let selectedItem = null;
 
-export const showTaskList = taskList => {
+const showTaskList = (taskList) => {
   const listContainer = document.querySelector('ul');
 
-  taskList.forEach(item => {
+  taskList.forEach((item) => {
     // Create HTML elements
     const listItem = document.createElement('li');
 
@@ -69,7 +69,7 @@ export const showTaskList = taskList => {
       const taskId = item.index;
 
       // Delete selected task
-      const updatedTaskList = taskList.filter(task => task.index !== taskId);
+      const updatedTaskList = taskList.filter((task) => task.index !== taskId);
 
       // Re-index items to ensure consecutive indexes
       updatedTaskList.forEach((task, i) => {
@@ -112,7 +112,7 @@ export const showTaskList = taskList => {
     });
 
     // Save edits when the Enter key is pressed
-    taskInput.addEventListener('keydown', event => {
+    taskInput.addEventListener('keydown', (event) => {
       if (event.key === 'Enter') {
         event.preventDefault();
         const editedDescription = taskInput.value;
@@ -131,3 +131,5 @@ export const showTaskList = taskList => {
     });
   });
 };
+
+export default showTaskList;
