@@ -1,11 +1,13 @@
 let selectedItem = null;
 
+// Create HTML element
 const createElement = (tag, classes) => {
   const element = document.createElement(tag);
   element.classList.add(...classes);
   return element;
 };
 
+// Create list item
 const createListItem = item => {
   const listItem = createElement('li', ['list-display']);
 
@@ -34,6 +36,22 @@ const createListItem = item => {
   listItem.appendChild(modificationParagraph);
 
   return listItem;
+};
+
+// Update local storage and display
+const updateTaskListAndDisplay = (taskList, listItem, listContainer) => {
+  const taskIdToDelete = listItem.index;
+  const updatedTaskList = taskList.filter(
+    task => task.index !== taskIdToDelete
+  );
+
+  updatedTaskList.forEach((task, i) => {
+    task.index = i + 1;
+  });
+
+  localStorage.setItem('taskList', JSON.stringify(updatedTaskList));
+  listContainer.removeChild(listItem);
+  selectedItem = null;
 };
 
 export const showTaskList = taskList => {
