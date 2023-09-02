@@ -110,5 +110,24 @@ export const showTaskList = taskList => {
         deleteIcon.style.display = 'block';
       }
     });
+
+    // Save edits when the Enter key is pressed
+    taskInput.addEventListener('keydown', event => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        const editedDescription = taskInput.value;
+        taskParagraph.textContent = editedDescription;
+        item.description = editedDescription;
+
+        // Update local storage
+        localStorage.setItem('taskList', JSON.stringify(taskList));
+
+        // Toggle back to view mode
+        taskParagraph.style.display = 'block';
+        taskInput.style.display = 'none';
+        optionsIcon.style.display = 'block';
+        deleteIcon.style.display = 'none';
+      }
+    });
   });
 };
