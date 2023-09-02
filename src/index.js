@@ -1,28 +1,30 @@
 import './styles.css';
+import showTaskList from './modules/show-task.list.js';
+import {
+  addTask,
+  taskInputField,
+  form,
+  taskAddBtn,
+} from './modules/add-task.js';
 
-const list = [
-  { description: 'Pray', completed: true, index: 0 },
-  { description: 'Brush', completed: true, index: 1 },
-  { description: 'Walk', completed: false, index: 2 },
-  { description: 'Sing', completed: false, index: 3 },
-  { description: 'Treck', completed: false, index: 4 },
-];
+const storedTaskList = JSON.parse(localStorage.getItem('taskList')) || [];
 
-const showTaskList = (list) => {
-  const listContainer = document.querySelector('ul');
+showTaskList(storedTaskList);
 
-  list.map((item) => {
-    const listItem = document.createElement('li');
-    listItem.innerHTML = `
-      <input type="checkbox">
-      <p class="task">${item.description}</p>
-      <p class="manipulate">
-        <span class="options"><i class="fa fa-ellipsis-v icon" aria-hidden="true"></i></span>
-        <span class="delete hidden"><i class="fa fa-trash icon" aria-hidden="true"></i></span>
-      </p>
-    `;
-    return listContainer.appendChild(listItem);
-  });
+const populateStorage = () => {
+  if (taskInputField.value.length > 0) {
+    addTask({
+      description: taskInputField.value,
+      completed: false,
+      index: storedTaskList.length + 1,
+    });
+  }
 };
 
-showTaskList(list);
+form.addEventListener('submit', populateStorage);
+
+taskAddBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  populateStorage();
+  taskInputField.value = '';
+});

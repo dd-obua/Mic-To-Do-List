@@ -35,7 +35,7 @@ body {
 li {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 2px solid #f6f6f6;
 }
 
 .heading,
@@ -54,6 +54,14 @@ li {
 
 .entry {
   padding: 0 2.4rem;
+}
+
+.list-display {
+  gap: 2.4rem;
+}
+
+.list-display:hover {
+  cursor: move;
 }
 
 form {
@@ -102,7 +110,7 @@ li input {
 }
 
 ul .icon:hover {
-  cursor: move;
+  cursor: pointer;
 }
 
 button {

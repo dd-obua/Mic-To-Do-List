@@ -159,6 +159,8 @@ You can deploy this project using:
 - **Functionality for reordering tasks**
 - **Functionality for editing tasks**
 - **Functionality for deleting tasks**
+- **Functionality for checking/crossing completed task(s)**
+- **Functionality for clearing completed task(s)**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
